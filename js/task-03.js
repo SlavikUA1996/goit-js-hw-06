@@ -13,6 +13,36 @@ const images = [
   },
 ];
 
+const list = document.querySelector('.gallery')
+
+const markup = images
+	.map(image => `<li><img class="picture" src=${image.url} width = "300" height = "200" alt='${image.alt}'></img></li>`)
+	.join('')
+// console.log(markup)
+  list.insertAdjacentHTML('beforeend', markup)
+      
+const pictures = document.querySelectorAll('.picture')
+
+list.style.listStyle = 'none';
+list.style.display = 'inline-flex';
+list.style.gap = '10px'
+
+
+
+// const list = document.querySelector('.gallery');
+
+// const imgEl = images
+//   .map(image => `<li><img class = "add-img" src = ${image.url}> width = "150" height = "100" alt = '${image.alt}'></img></li>`)
+// .join('');
+
+// list.insertAdjacentElement('beforeend', imgEl);
+
+// const picture = document.querySelectorAll('.add-img');
+
+// console.log(imgEl)
+
+
+
 // const list = document.querySelector('#gallery');
 
 // images.forEach(element => {

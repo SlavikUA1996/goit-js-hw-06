@@ -9,4 +9,4 @@ textInputEl.addEventListener('input', (event) => {
     outputEl.textContent = event.currentTarget.value;
     
 });
-console.log(textInputEl);
+// console.log(textInputEl);

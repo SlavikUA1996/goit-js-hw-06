@@ -1,29 +1,53 @@
 
-const form = document.querySelector('.login-form');
 
-form.addEventListener('submit', onFormSubmit);
+const form = document.querySelector('.login-form')
+
+form.addEventListener('submit', onFormSubmit)
 
 function onFormSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    const formData = new FormData(event.currentTarget);
+    const {
+        elements: { email, password },
+    } = event.currentTarget
 
-    console.log(formData)
+    if (email.value === '' || password.value === '') {
+        return alert('Будь ласка заповніть поля')
+    }
 
-    formData.forEach((value, name) => {
-        console.log('onFormSubmit -> name', name);
-        console.log('onFormSubmit -> value', value);
-
-
-        document.getElementById('.login-form').reset();
-    })
+    const userDetails = { email: email.value, Password: password.value }
+    
+    console.log(userDetails)
+    event.currentTarget.reset()
 }
 
-const inputs = document.querySelectorAll('input');
-console.log(inputs)
 
-inputs.forEach(input => {
-    if (input.value.trim() === '') {
-        alert("error")
-    }
-});
+
+// const form = document.querySelector('.login-form');
+
+// form.addEventListener('submit', onFormSubmit);
+
+// function onFormSubmit(event) {
+//     event.preventDefault();
+
+//     const formData = new FormData(event.currentTarget);
+
+//     console.log(formData)
+
+//     formData.forEach((value, name) => {
+//         console.log('onFormSubmit -> name', name);
+//         console.log('onFormSubmit -> value', value);
+
+
+//         document.getElementById('.login-form'), reset();
+//     })
+// }
+
+// const inputs = document.querySelectorAll('input');
+// console.log(inputs)
+
+// inputs.forEach(input => {
+//     if (input.value.trim() === '') {
+//         alert("error")
+//     }
+// });
