@@ -13,7 +13,7 @@ const list = document.querySelector("#ingredients");
 
 const addLiEl = [];
 
-ingredients.forEach(ingredient => {
+ingredients.map(ingredient => {
   const item = document.createElement('li');
   // console.log(item)
   item.className = 'imem';
